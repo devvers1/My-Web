@@ -1,1 +1,663 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Devvers — desarrollador de Python y HTML.">
+  <title>Devvers — Developer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08090b;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+
+      background: rgba(8, 9, 11, 0.8);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid #1b1d21;
+    }
+
+    .nav-inner {
+      height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #c7a85a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      color: #a7a9ad;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+
+      display: grid;
+      place-items: center;
+      text-align: center;
+
+      padding: 120px 0 70px;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(199, 168, 90, 0.12),
+          transparent 30%
+        ),
+        #08090b;
+    }
+
+    .avatar {
+      width: 95px;
+      height: 95px;
+
+      margin: 0 auto 25px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 28px;
+
+      background: #15171b;
+      border: 1px solid #2b2d31;
+
+      font-size: 2.5rem;
+
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+
+    .eyebrow {
+      color: #c7a85a;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .95;
+      letter-spacing: -5px;
+    }
+
+    h1 span {
+      color: #c7a85a;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 25px auto 0;
+
+      color: #a7a9ad;
+
+      font-size: 1.1rem;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+
+      border-radius: 12px;
+
+      border: 1px solid #292c31;
+
+      background: #121418;
+
+      transition: .2s;
+
+      font-weight: 650;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: #c7a85a;
+    }
+
+    .btn.primary {
+      background: #c7a85a;
+      color: #0b0c0e;
+
+      border-color: #c7a85a;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: #858990;
+      margin-bottom: 35px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .card {
+      padding: 30px;
+
+      background: #101216;
+
+      border: 1px solid #202329;
+
+      border-radius: 20px;
+
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color: #34373e;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #9699a0;
+    }
+
+    .tag {
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      background: #191b20;
+
+      color: #c7a85a;
+
+      font-size: .8rem;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+    .skill {
+      padding: 9px 13px;
+
+      border: 1px solid #292c31;
+
+      border-radius: 10px;
+
+      color: #c7c9cd;
+    }
+
+    /* SOCIALS */
+
+    .socials {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 14px;
+    }
+
+    .social {
+      padding: 22px;
+
+      border: 1px solid #202329;
+
+      border-radius: 16px;
+
+      background: #101216;
+
+      transition: .2s;
+    }
+
+    .social:hover {
+      border-color: #c7a85a;
+
+      transform: translateY(-3px);
+    }
+
+    .social strong {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+    .social small {
+      color: #777b83;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1b1d21;
+
+      padding: 30px 0;
+
+      color: #6f737b;
+
+      text-align: center;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 720px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .cards,
+      .socials {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a class="logo" href="#">
+        Dev<span>vers</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#sobre-mi">
+          Sobre mí
+        </a>
+
+        <a href="#proyectos">
+          Proyectos
+        </a>
+
+        <a href="#redes">
+          Redes
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="avatar">
+        👑
+      </div>
+
+      <div class="eyebrow">
+        DESARROLLADOR
+      </div>
+
+      <h1>
+        Hola, soy <span>Devvers</span>.
+      </h1>
+
+      <p>
+        Desarrollador de Python y HTML.
+        Me gusta crear proyectos, experimentar
+        con nuevas ideas y compartir código
+        con la comunidad.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="#proyectos"
+        >
+          Ver proyectos
+        </a>
+
+        <a
+          class="btn"
+          href="#redes"
+        >
+          Mis redes
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- SOBRE MI -->
+
+    <section id="sobre-mi">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Sobre mí
+        </h2>
+
+        <p class="section-subtitle">
+          Código, ideas y proyectos hechos a mi manera.
+        </p>
+
+
+        <div class="card">
+
+          <h3>
+            💻 Developer
+          </h3>
+
+          <p>
+            Trabajo principalmente con Python y HTML.
+            Este sitio es mi pequeño espacio en internet
+            para mostrar quién soy, mis proyectos y las
+            comunidades que estoy construyendo.
+          </p>
+
+
+          <div class="skills">
+
+            <span class="skill">
+              🐍 Python
+            </span>
+
+            <span class="skill">
+              🌐 HTML
+            </span>
+
+            <span class="skill">
+              ⚡ Proyectos
+            </span>
+
+            <span class="skill">
+              🧠 Aprendizaje
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ORGANIZACIONES -->
+
+    <section id="proyectos">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Mis organizaciones
+        </h2>
+
+        <p class="section-subtitle">
+          Dos espacios, dos objetivos.
+        </p>
+
+
+        <div class="cards">
+
+
+          <!-- ORGANIZATION -->
+
+          <article class="card">
+
+            <div class="icon">
+              🏢
+            </div>
+
+            <h3>
+              DevversOrganization
+            </h3>
+
+            <p>
+              Un espacio para crear programas y proyectos
+              para nosotros, experimentar con ideas y
+              desarrollar herramientas propias.
+            </p>
+
+            <span class="tag">
+              Proyectos internos
+            </span>
+
+          </article>
+
+
+          <!-- GROUP -->
+
+          <article class="card">
+
+            <div class="icon">
+              🎁
+            </div>
+
+            <h3>
+              Devvers Group
+            </h3>
+
+            <p>
+              Un espacio pensado para compartir y regalar
+              código a otras personas, ayudándolas a
+              aprender, crear y comenzar sus propios proyectos.
+            </p>
+
+            <span class="tag">
+              Código para la comunidad
+            </span>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REDES -->
+
+    <section id="redes">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Encuéntrame
+        </h2>
+
+        <p class="section-subtitle">
+          Mis redes y perfiles.
+        </p>
+
+
+        <div class="socials">
+
+
+          <!-- DISCORD -->
+
+          <a
+            class="social"
+            href="https://discord.gg/PtT3Y3mKk6"
+            target="_blank"
+          >
+
+            <strong>
+              💬 Discord
+            </strong>
+
+            <small>
+              Únete a la comunidad
+            </small>
+
+          </a>
+
+
+          <!-- TIKTOK -->
+
+          <a
+            class="social"
+            href="https://www.tiktok.com/@devvers77"
+            target="_blank"
+          >
+
+            <strong>
+              🎵 TikTok
+            </strong>
+
+            <small>
+              Contenido y proyectos
+            </small>
+
+          </a>
+
+
+          <!-- GITHUB -->
+
+          <a
+            class="social"
+            href="https://github.com/devvers1"
+            target="_blank"
+          >
+
+            <strong>
+              🐙 GitHub
+            </strong>
+
+            <small>
+              Mis repositorios
+            </small>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Devvers ·
+      Hecho con código y ganas de crear.
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
